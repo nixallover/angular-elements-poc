@@ -25,6 +25,9 @@
     "angular-e2e": {
       "tags": [],
       "implicitDependencies": ["angular"]
+    },
+    "chart": {
+      "tags": []
     }
   }
 }
