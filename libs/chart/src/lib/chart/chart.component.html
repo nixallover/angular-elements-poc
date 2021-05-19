@@ -1,1 +1,6 @@
-<h1>Chart!</h1>
+<div class="container">
+  <ul>
+    <li *ngFor="let data of chartData">{{ data.name }}: {{ data.value }}</li>
+  </ul>
+  {{ yAxisUnit }}
+</div>
