@@ -36,7 +36,7 @@
       "projectType": "application",
       "root": "apps/angular",
       "sourceRoot": "apps/angular/src",
-      "prefix": "angular-elements-poc",
+      "prefix": "poc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -154,7 +154,7 @@
       "projectType": "library",
       "root": "libs/chart",
       "sourceRoot": "libs/chart/src",
-      "prefix": "angular-elements-poc",
+      "prefix": "poc",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",

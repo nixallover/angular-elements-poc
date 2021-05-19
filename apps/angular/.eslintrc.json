@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "angular-elements-poc",
+            "prefix": "poc",
             "style": "kebab-case"
           }
         ]
