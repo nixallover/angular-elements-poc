@@ -150,20 +150,20 @@
         }
       }
     },
-    "chart2": {
+    "chart": {
       "projectType": "application",
-      "root": "libs/chart2",
-      "sourceRoot": "libs/chart2/src",
+      "root": "libs/chart",
+      "sourceRoot": "libs/chart/src",
       "prefix": "poc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/libs/chart2",
-            "index": "libs/chart2/src/index.html",
-            "main": "libs/chart2/src/main.ts",
-            "polyfills": "libs/chart2/src/polyfills.ts",
-            "tsConfig": "libs/chart2/tsconfig.app.json",
+            "outputPath": "dist/libs/chart",
+            "index": "libs/chart/src/index.html",
+            "main": "libs/chart/src/main.ts",
+            "polyfills": "libs/chart/src/polyfills.ts",
+            "tsConfig": "libs/chart/tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "scripts": []
           },
@@ -183,8 +183,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "libs/chart2/src/environments/environment.ts",
-                  "with": "libs/chart2/src/environments/environment.prod.ts"
+                  "replace": "libs/chart/src/environments/environment.ts",
+                  "with": "libs/chart/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -204,10 +204,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "chart2:build:production"
+              "browserTarget": "chart:build:production"
             },
             "development": {
-              "browserTarget": "chart2:build:development"
+              "browserTarget": "chart:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -215,23 +215,23 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chart2:build"
+            "browserTarget": "chart:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/chart2/src/**/*.ts",
-              "libs/chart2/src/**/*.html"
+              "libs/chart/src/**/*.ts",
+              "libs/chart/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/chart2"],
+          "outputs": ["coverage/libs/chart"],
           "options": {
-            "jestConfig": "libs/chart2/jest.config.js",
+            "jestConfig": "libs/chart/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'chart2',
+  displayName: 'chart',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/libs/chart2',
+  coverageDirectory: '../../coverage/libs/chart',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
