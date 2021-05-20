@@ -25,7 +25,9 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build:elements": "ng build chart && node ./tools/build-elements.js",
+    "serve:elements": "npx lite-server --baseDir=\"elements\""
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "@nrwl/angular": "12.3.3",
     "concat": "^1.0.3",
     "fs-extra": "^10.0.0",
+    "lite-server": "^2.6.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

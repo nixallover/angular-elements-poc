@@ -1,4 +1,4 @@
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, DoBootstrap } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
 
@@ -11,12 +11,11 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent],
   entryComponents: [AppComponent],
 })
-export class AppModule {
-  constructor(private injector: Injector) {
-    const el = createCustomElement(AppComponent, { injector });
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const el = createCustomElement(AppComponent, { injector: this.injector });
     customElements.define('chart-element', el);
   }
-
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, @typescript-eslint/no-empty-function, @angular-eslint/use-lifecycle-interface
-  ngDoBootstrap() {}
 }
