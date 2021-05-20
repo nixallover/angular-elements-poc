@@ -150,46 +150,6 @@
         }
       }
     },
-    "chart": {
-      "projectType": "library",
-      "root": "libs/chart",
-      "sourceRoot": "libs/chart/src",
-      "prefix": "poc",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "project": "libs/chart/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/chart/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/chart/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/chart"],
-          "options": {
-            "jestConfig": "libs/chart/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/chart/src/**/*.ts",
-              "libs/chart/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "chart2": {
       "projectType": "application",
       "root": "libs/chart2",
