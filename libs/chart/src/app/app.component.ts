@@ -1,26 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 type YAxisUnit = 'dollars' | 'kWh';
 
 export type ChartDataModel = {
+  id?: string;
   name: string;
   value: number;
+  percentage?: number;
 };
 
 @Component({
-  selector: 'poc-root',
+  selector: 'poc-pareto-chart-element',
   template: `<div class="container">
+    <h3>Pareto Chart</h3>
     <ul>
-      <li *ngFor="let data of chartData">{{ data.name }}: {{ data.value }}</li>
+      <li *ngFor="let data of chartData">
+        {{ data.name }}: {{ data.value }}
+        <a (click)="chooseId(data.id)">{{ data.id }}</a>
+      </li>
     </ul>
-    {{ yAxisUnit }}
+    Unit: {{ yAxisUnit }}, Total: {{ yAxisTotal }}
   </div> `,
 
   styles: [
     `
-      h1 {
-        color: green;
-      }
       .container {
         border: dotted 1px red;
         display: block;
@@ -33,8 +36,16 @@ export type ChartDataModel = {
 export class AppComponent {
   @Input() yAxisUnit: YAxisUnit = 'dollars';
   @Input() chartData: ChartDataModel[] = [];
+  @Input() yAxisTotal: number;
+
+  @Output() selectid = new EventEmitter<string>();
 
   // constructor() {}
 
   // ngOnInit(): void {}
+
+  chooseId(id: string) {
+    console.log(`Chose ID: ${id}`);
+    this.selectid.emit(id);
+  }
 }

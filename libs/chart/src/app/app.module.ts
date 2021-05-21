@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
   entryComponents: [AppComponent],
 })
 export class AppModule implements DoBootstrap {
@@ -16,6 +14,6 @@ export class AppModule implements DoBootstrap {
 
   ngDoBootstrap() {
     const el = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define('chart-element', el);
+    customElements.define('poc-pareto-chart-element', el);
   }
 }

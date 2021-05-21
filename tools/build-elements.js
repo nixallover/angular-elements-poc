@@ -9,5 +9,5 @@ const concat = require('concat');
   ];
 
   await fs.ensureDir('elements');
-  await concat(files, 'elements/chart-element.js');
+  await concat(files, 'elements/poc-chart-chart-element.js');
 })();
