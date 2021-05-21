@@ -2,18 +2,20 @@ import { NgModule, Injector, DoBootstrap } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { ParetoChartComponent } from './pareto-chart.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ParetoChartComponent],
   imports: [BrowserModule],
-  entryComponents: [AppComponent],
+  entryComponents: [ParetoChartComponent],
 })
-export class AppModule implements DoBootstrap {
+export class ParetoChartModule implements DoBootstrap {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const el = createCustomElement(AppComponent, { injector: this.injector });
+    const el = createCustomElement(ParetoChartComponent, {
+      injector: this.injector,
+    });
     customElements.define('poc-pareto-chart-element', el);
   }
 }

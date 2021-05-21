@@ -2,12 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>chart</title>
+    <title>Angular Elements POC</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <poc-root></poc-root>
+    <h1>Angular Elements POC</h1>
+
+    <script>
+      const chart = document.createElement('poc-pareto-chart-element');
+      chart.chartData = [
+        {
+          name: 'Air House North Compressor',
+          value: 6840.34,
+          id: '1',
+        },
+        {
+          name: 'Air House South Compressor',
+          value: 4024.2,
+          id: '2',
+        },
+        {
+          name: 'Grit Blast Air Compressor',
+          value: 3998.02,
+          id: '3',
+        },
+        {
+          name: 'Grit Blast South Compressor',
+          value: 3871.94,
+          id: '4',
+        },
+        {
+          name: 'Fabrication East Compressor',
+          value: 4002.72,
+          id: '5',
+        },
+        {
+          name: 'Fabrication West Compressor',
+          value: 2009.47,
+          id: '6',
+        },
+      ];
+      chart.yAxisTotal = 23123123;
+
+      chart.addEventListener('idChosen', (event) => {
+        console.log(`[outside component] ID chosen: ${event.detail}`);
+      });
+
+      document.body.appendChild(chart);
+
+      setTimeout(() => {
+        chart.chartData = [];
+      }, 2000);
+    </script>
+    <script type="text/javascript" src="poc-chart-chart-element.js"></script>
   </body>
 </html>
